@@ -34,7 +34,7 @@ def main(input_path,
         for type_ in ['strict', 'allow_extra_steps']
     }
 
-    metrics_path = output_dir / 'metrics.jsonl'
+    metrics_path = output_dir / f'{input_path.stem}.jsonl'
     all_metrics: Dict[str, Dict[str, float]] = defaultdict(lambda : defaultdict(list))
     with open(metrics_path, 'w') as f_out:
         for i_example, line in enumerate(open(input_path)):
@@ -72,7 +72,7 @@ def main(input_path,
             metrics_summary[metric_type][name] = statistics.mean(vals)
 
     json.dump(metrics_summary,
-              open(str(output_dir / 'metrics_summary.json'), 'w'),
+              open(str(output_dir / f'{input_path.stem}_summary.json'), 'w'),
               ensure_ascii=False, indent=4, sort_keys=True, separators=(',', ': '))
     pprint(dict(metrics_summary))
 

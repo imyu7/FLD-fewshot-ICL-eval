@@ -1,0 +1,18 @@
+{
+    "allow_extra_steps": {
+        "answer_accuracy": 1.0,
+        "proof_accuracy.zero_one": 1.0,
+        "rouge1": 90.0,
+        "rouge2": 46.66666,
+        "rougeL": 85.0,
+        "rougeLsum": 85.0
+    },
+    "strict": {
+        "answer_accuracy": 1.0,
+        "proof_accuracy.zero_one": 0.8,
+        "rouge1": 90.0,
+        "rouge2": 46.66666,
+        "rougeL": 85.0,
+        "rougeLsum": 85.0
+    }
+}

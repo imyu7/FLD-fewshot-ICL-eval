@@ -102,7 +102,7 @@ def main(input_path,
     else:
         raise ValueError(f'Unknown model service {model_service}')
 
-    output_path = output_dir / 'predictions.jsonl'
+    output_path = output_dir / f'{_model_name}_{max_examples}.jsonl'
     with open(output_path, 'w') as f_out:
         for i_example, line in tqdm(enumerate(open(input_path))):
             if i_example >= max_examples:
